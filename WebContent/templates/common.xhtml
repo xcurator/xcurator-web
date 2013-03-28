@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+		<head>
+		<link  href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css" />
+		<link  href="http://fonts.googleapis.com/css?family=Neuton:regular,italic" rel="stylesheet" type="text/css" />
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		<style type="text/css">
+			body {
+  				  font-family: 'Neuton', serif;
+				  font-size: 18px;
+			}
+			.header {
+  				  font-family: 'Neuton', serif;
+				  font-size: 35px;
+				  text-shadow:   0px 1px 0px #000;
+				  -webkit-box-shadow: 0px 1px 0px #000;
+			}
+			.bottom {
+				  font-family: 'Neuton', serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+			}
+			.rightcolumn {
+				text-align: right;
+			}
+			
+			.topcolumn {
+				vertical-align: top;
+			}
+			
+			.leftcolumn {
+				width: 300px;
+			}
+			input[type="text"] {
+				width: 100%;
+				height: 2em;
+                border: 1px #1a2638 solid;
+				border-radius: 10px;
+		        -moz-border-radius: 10px;
+        		-webkit-border-radius: 10px;
+		        -webkit-box-shadow: 0px 1px 0px #000;
+		        font-family: 'Lato', serif;
+				font-size: 18px;
+			}
+			
+			textarea {
+				width: 100%;
+				height: 2em;
+                border: 1px black dashed;
+				border-radius: 3px;
+		        -moz-border-radius: 3px;
+        		-webkit-border-radius: 3px;
+		        -webkit-box-shadow: 0px 1px 0px #000;
+		        font-family: 'Puritan', serif;
+				font-size: 12px;
+			}
+			
+			input[type="submit"] {
+				height: 3em;
+		        -moz-border-radius: 10px;
+        		-webkit-border-radius: 10px;
+		        -webkit-box-shadow: 0px 1px 0px #000;
+		        font-family: 'Neuton', serif;
+				font-size: 20px;
+				-moz-transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+				transition: all .5s ease-in-out; 
+				
+			}
+			input:hover {
+			    font-weight: 700;
+				-moz-transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+				transition: all .5s ease-in-out; 
+				
+			}			
+			a {
+				border-width: 0 0px 0px 0px;
+				color: #2690df;
+				line-height: 30px; 
+				padding: 0 10px; 
+				text-decoration: none;
+				-moz-transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+				transition: all .5s ease-in-out; 
+			}
+			
+			a:hover {
+				color: #0000F0;
+				text-decoration: underline;
+				-moz-transition: all .5s ease-in-out;
+				-webkit-transition: all .5s ease-in-out;
+				transition: all .5s ease-in-out; 
+			}
+			
+			a.small {
+				font-size: 18px;
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:none"  align="left" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tbody>
+
+	<tr>
+		<td>
+			<img src="http://dblab.cs.toronto.edu/project/xcurator/images/uoft_dbgroup_logo.gif"/>
+		</td>
+		<td class="header" height="42" align="left" valign="middle" width="50%" bgcolor="#ffffff">
+			<ui:insert name="pageHeader">Page Header</ui:insert>
+		</td>
+		<td>
+		
+			<a href="http://dblab.cs.toronto.edu/project/xcurator/index.html">Project Home Page</a>
+			<br/>
+			<a href="/sparql">SPARQL End Point</a>
+		</td>
+	</tr>
+	<tr>
+		<td height="1" bgcolor="#ffffff">
+		</td>
+	</tr>	
+
+	<tr>
+		<td height="20">
+		</td>
+	</tr>	
+
+
+	<tr>
+		<td></td>
+		<td width="100%"  colspan="2">
+			<table width="100%" style="height:150px" align="left" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td align="left" width="100%" valign="middle">
+					
+					<ui:insert name="body">Page Body</ui:insert>
+					
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</td>
+	</tr>	
+	
+</tbody>
+</table>
+</body>
+		
+</html>

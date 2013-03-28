@@ -1,0 +1,24 @@
+<ivysettings>
+
+	<caches artifactPattern="[organisation]/[module]/[revision]/[artifact].[ext]" />
+	<settings defaultResolver="ibiblio.java.net" overwriteMode="always" />
+
+	<resolvers>
+		<chain name="ibiblio.java.net">
+
+			<url name="maven" m2compatible="true">
+				<ivy pattern="http://repo1.maven.org/maven2/[organization]/[module]/[revision]/[artifact]-[revision].[ext]" />
+				<artifact pattern="http://repo1.maven.org/maven2/[organization]/[module]/[revision]/[artifact]-[revision].[ext]" />
+			</url>
+
+			<url name="java.net" m2compatible="true">
+				<ivy pattern="http://download.java.net/maven/2/[organization]/[module]/[revision]/[artifact]-[revision].[ext]" />
+				<artifact pattern="http://download.java.net/maven/2/[organization]/[module]/[revision]/[artifact]-[revision].[ext]" />
+			</url>
+
+			<ibiblio name="m2" m2compatible="true" />
+
+		</chain>
+
+	</resolvers>
+</ivysettings>

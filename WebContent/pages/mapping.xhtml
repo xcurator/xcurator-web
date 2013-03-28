@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templates/common.xhtml">
+	<ui:define name="pageTitle">xCurator's Mapping Generator</ui:define>
+	<ui:define name="pageHeader">xCurator's Mapping Generator</ui:define>
+	<ui:define name="body">
+		<h:form>
+			<h:panelGrid columns="3" columnClasses="rightcolumn,leftcolumn">
+				<h:outputText value="#{msgs.sampleDataURL}" />
+				<h:inputText value="${mapgen.url}" styleClass="inputbox" />
+				<h:outputText />
+				<h:outputText value="#{msgs.ontologyMatchingThreshold}" />
+				<h:inputText value="${mapgen.ontologyMatchingThreshold}"/>
+				<h:outputText />
+				<h:outputText value="#{msgs.schemaSimilartyThreshold}" />
+				<h:inputText value="${mapgen.schemaSimilarityThreshold}"/>
+				<h:outputText />
+				<h:outputText value="#{msgs.typePrefix}" />
+				<h:inputText value="${mapgen.typePrefix}"/>
+				<h:panelGrid columns="3" width="400px">
+					<a class="small" href="${mapgen.instanceURI}">Browse Instances</a>
+					<a class="small" href="${mapgen.classURI}">Browse Classes</a>
+				</h:panelGrid>
+				<h:outputText value="#{msgs.sampleSize}" />
+				<h:inputText value="${mapgen.sampleSize}"/>
+				<h:outputText />
+				<h:outputText value="#{msgs.minimumElementRequiredForLeafPromotion}" />
+				<h:inputText value="${mapgen.minimumElementRequiredForLeafPromotion}"/>
+				<h:outputText />
+				<h:outputText value="#{msgs.ontologyPruningThreshold}" />
+				<h:inputText value="${mapgen.ontologyPruningThreshold}"/>
+				<h:outputText />
+				<h:outputText value="#{msgs.internalLinkingThreshold}" />
+				<h:inputText value="${mapgen.internalLinkingThreshold}"/>
+				<h:outputText />
+				<h:commandButton value="Generate Mapping" action="${mapgen.generateMapping}" />
+				<h:commandLink action="${mapgen.fillInClinicalTrialSampleData}" value="Fill with sample data ..."/>
+			</h:panelGrid>
+			
+		</h:form>
+		
+		<br style="height: 3em;" />
+		<br/>
+		
+		<div style="height: 1px; background-color: black; width: 50%;"/>
+		
+		<br style="height: 3em;" />
+		<br/>
+		
+		<h:form rendered="${!empty(mapgen.mappingContent)}">
+			<span>
+			Generated Mapping
+			</span>
+			<br style="height: 2em;"/>
+			<br/>
+			<h:panelGrid columns="1" columnClasses="topcolumn">
+			<h:outputText value="#{msgs.schemaGraph}:"/>
+			<iframe src="/xcurator/pages/force.jsf" width="60%" height="500px" style="border: none;">
+			</iframe>
+			<h:outputText value="#{msgs.mappingXML}:"/>
+			<h:inputTextarea
+				style="width: 800px; height: 600px;"
+				value="${mapgen.mappingContent}" />
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<h:selectOneRadio value="${mapgen.outputFormat}" id="outputformat">
+					<f:selectItem id="item1" itemLabel="RDF/XML-ABBREV" itemValue="RDF/XML-ABBREV" />
+	  				<f:selectItem id="item2" itemLabel="RDF/XML" itemValue="RDF/XML" />
+	  				<f:selectItem id="item3" itemLabel="N-TRIPLE" itemValue="N-TRIPLE" />
+	  				<f:selectItem id="item4" itemLabel="N3" itemValue="N3" />
+				</h:selectOneRadio>
+				<h:commandButton value="Map the sample file" action="${mapgen.mapURL}"/>
+			</h:panelGrid>
+			<br/>
+			<br/>
+			To map more than 5 instances contact xcurator _at_ cs _dot_ toronto _dot_ edu.
+		</h:form>
+		
+		<br style="height: 3em;" />
+		<br/>
+		
+		<div style="height: 1px; background-color: black; width: 50%;"/>
+		
+		<br style="height: 3em;" />
+		<br/>
+		
+		
+		<h:inputTextarea
+			style="width: 800px; height: 600px;"
+			value="${mapgen.convertedContent}" rendered="#{!empty(mapgen.convertedContent)}" />
+			
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,36 @@
+<ivy-module version="2.0">
+    <info organisation="edu.toronto.cs" module="xml2rdf-webfrontend"/>
+    <dependencies>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.6.1"/>
+		<dependency org="org.slf4j" name="slf4j-log4j12" rev="1.6.1"/>
+		<dependency org="log4j" name="log4j" rev="1.2.16"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.6.1"/>
+		<dependency org="org.slf4j" name="slf4j-log4j12" rev="1.6.1"/>
+		<dependency org="com.hp.hpl.jena" name="jena" rev="2.6.4"/>
+		<dependency org="com.hp.hpl.jena" name="tdb" rev="0.8.8"/>
+		<dependency org="net.sf.json-lib" name="json-lib" rev="2.4">
+   			<artifact name="json-lib" type="jar" url="http://repo2.maven.org/maven2/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar" />
+		</dependency>
+		<dependency org="org.apache" name="apache" rev="9"/>
+		<dependency org="commons-lang" name="commons-lang" rev="2.5"/>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1.1"/>
+		<dependency org="commons-collections" name="commons-collections" rev="3.1"/>
+		
+		<dependency org="net.sf.ezmorph" name="ezmorph" rev="1.0.6"/>
+		
+		<dependency org="org.codehaus.groovy" name="groovy-all-minimal" rev="1.5.8"/>
+		<dependency org="oro" name="oro" rev="2.0.8"/>
+		
+		<dependency org="com.hp.hpl.jena" name="jena" rev="2.6.4"/>
+		<dependency org="com.hp.hpl.jena" name="tdb" rev="0.8.8"/>
+
+        <dependency org="com.sun.faces" name="jsf-api" rev="2.0.3"/>
+        <dependency org="com.sun.faces" name="jsf-impl" rev="2.0.3"/>
+
+        <exclude org="javax.servlet" />
+        <exclude org="javax.servlet.jsp" />
+        <exclude org="javax.el" />
+        <exclude org="javax.xml.bind"/>
+        <exclude org="javax.xml"/>
+    </dependencies>
+</ivy-module>
